@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <%- include('layout/head.ejs') %>
+</head>
+
+<body>
+
+    <section class="hero is-warning is-fullheight">
+        <!-- Hero head: will stick at the top -->
+        <div class="hero-head">
+            <header class="navbar">
+                <div class="container">
+                    <div class="navbar-brand">
+                        <a href=<%=rou.home %> class="navbar-item">
+                            <img src="https://bulma.io/images/bulma-type.png" alt="Logo">
+                        </a>
+                        <span class="navbar-burger has-text-white" data-target="navbarMenuHeroC">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </span>
+                    </div>
+                    <div id="navbarMenuHeroC" class="navbar-menu">
+                        <div class="navbar-end">
+                            <a href=<%=rou.home %> class="navbar-item">
+                                Home
+                            </a>
+                            <!--  -->
+                            <span class="navbar-item">
+                                <a href=<%=rou.home %> class="button is-info is-light">
+                                    <span><%= proverb %> </span>
+                                </a>
+                            </span>
+                            <!--  -->
+                        </div>
+                    </div>
+                </div>
+            </header>
+        </div>
+
+        <!-- Hero content: will be in the middle -->
+        <div class="hero-body">
+            <div class="container has-text-centered">
+
+                <!--  -->
+                <p class="title">
+                    <i class="fas fa-exclamation-triangle faa-flash animated fa-7x"></i>
+                </p>
+                <p class="title">
+                    <%= title %>
+                </p>
+                <!--  -->
+
+            </div>
+        </div>
+
+        <!-- Hero footer: will stick at the bottom -->
+        <div class="hero-foot">
+            <nav class="level is-mobile">
+                <div class="level-item has-text-centered">
+                    <div>
+                        <p class="heading">Today</p>
+                        <p class="title">
+                            <%= data.today %>
+                        </p>
+                    </div>
+                </div>
+                <div class="level-item has-text-centered">
+                    <div>
+                        <p class="heading">All</p>
+                        <p class="title">
+                            <%= data.all %>
+                        </p>
+                    </div>
+                </div>
+                <div class="level-item has-text-centered">
+                    <div>
+                        <p class="heading">Users</p>
+                        <p class="title">
+                            <%= data.user %>
+                        </p>
+                    </div>
+                </div>
+                <div class="level-item has-text-centered">
+                    <div>
+                        <p class="heading">Guests</p>
+                        <p class="title">
+                            <%= data.guests %>
+                        </p>
+                    </div>
+                </div>
+            </nav>
+            <br>
+        </div>
+    </section>
+
+</body>
+
+</html>
