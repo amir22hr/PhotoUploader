@@ -5,6 +5,7 @@ require('dotenv').config({
 const express = require('express');
 const errorHandler = require('./helpers/handleErrors')
 const router = require('./routes');
+const mod = require('./helpers/mod')
 
 //configs
 const app = express();
@@ -12,6 +13,10 @@ app.set('view engine', 'ejs')
 app.use(express.static('public'))
 
 //MiddleWares
+app.use((req, res, next) => {
+    mod.UserAnalysis()
+    next()
+})
 app.use('/', router)
 
 //handleErrors

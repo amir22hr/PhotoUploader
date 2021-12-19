@@ -1,7 +1,5 @@
-// const User = require('../models/User')
-// const Image = require('../models/Image')
-//     , ImageGuest = require('../models/ImageGuest')
-// const date = require('date-and-time');
+const Image = require('../models/Image')
+const date = require('date-and-time');
 
 
 const data = {
@@ -11,30 +9,24 @@ const data = {
     guests: 0,
 }
 
-// const UserAnalysis = async () => {
-//     data.user = await User.count();
-//     data.all = await Image.count() + await ImageGuest.count()
-//     data.guests = await ImageGuest.count()
+const UserAnalysis = async () => {
+    data.user = await Image.count();
+    data.all = await Image.count();
+    data.guests = await Image.count()
 
-//     //today
-//     let DateToday = date.format(new Date(), 'YYYY/MM/DD');
-//     data.today = await Image.count({
-//         where: {
-//             date: DateToday
-//         }
-//     }) + await ImageGuest.count({
-//         where: {
-//             date: DateToday
-//         }
-//     })
+    //today
+    let DateToday = date.format(new Date(), 'YYYY/MM/DD');
+    data.today = await Image.count({
+        where: {
+            date: DateToday
+        }
+    })
 
-// }
+}
 
 const routes = {
     home: "/",
     hostImage : `http://localhost:${process.env.PORT}/images/`,
-    _404: "/notFound",
-    download: "/download",
 }
 
 const shortSentences = () => {
@@ -55,4 +47,4 @@ const shortSentences = () => {
 }
 
 
-module.exports = { data, routes, shortSentences }
+module.exports = { data, routes, shortSentences, UserAnalysis }
