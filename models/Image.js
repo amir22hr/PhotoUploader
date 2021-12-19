@@ -4,7 +4,7 @@ const { DataTypes } = require('sequelize')
 const db = require('../config/db')
 
 //Structure
-const Image = db.define('images', {
+const Image = db.define(process.env.SQL_TABLE, {
     id: {
         type: DataTypes.NUMBER,
         allowNull: false,
