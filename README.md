@@ -19,6 +19,8 @@
 
 3. Config **variables.env**
 
+4. RUN **npm start**
+
 
 ## DATABASE Structure
 
