@@ -69,13 +69,13 @@
                                             <img width="100" src="/images/<%= name %>" alt="<%= name %>">
                                         </a>
                                     </td>
-                                    <td><a href="/images/<%= name %>">
+                                    <td><a id="link" href="/images/<%= name %>">
                                             <%= rou.hostImage + name%>
                                         </a>
                                     </td>
                                     <td>
                                         <div id="tools">
-                                            <span><a><i class="fa fa-copy"></i></a></span>
+                                            <span id="copyLink"><a><i class="fa fa-copy"></i></a></span>
                                         </div>
                                     </td>
                                 </tr>
@@ -145,6 +145,17 @@
 
         </div>
     </section>
+
+    <!-- script -->
+    <script>
+        //Copy to Clipboard
+        var copyLink = document.getElementById("copyLink");
+        var link = document.getElementById("link").innerText;
+        copyLink.addEventListener('click',()=>{
+            navigator.clipboard.writeText(link);
+        })
+
+    </script>
 
 
 </body>

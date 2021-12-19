@@ -25,7 +25,7 @@ const post = async (req, res) => {
         await Image.create({
             user_ip: ip,
             name: req.file.filename,
-            format: req.file.mimetype.split("/")[1],
+            format: 'jpeg',
             size: (Number(req.file.size) * 0.0009765625).toString().split(".")[0],
             date: date.format(new Date(), 'YYYY/MM/DD HH:mm:ss'),
         });
@@ -35,7 +35,7 @@ const post = async (req, res) => {
             rou: mod.routes,
             proverb: mod.shortSentences(),
             name: req.file.filename,
-            format: req.file.mimetype.split("/")[1],
+            format: 'jpeg',
             size: (Number(req.file.size) * 0.0009765625).toString().split(".")[0],
             date: date.format(new Date(), 'YYYY/MM/DD HH:mm:ss'),
         })
